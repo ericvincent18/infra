@@ -14,3 +14,8 @@ repos:
     rev: v6.2.1
     hooks:
     -   id: beautysh
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: b9a7794c4f425ef8419081e6993f99419cc667ea
+    hooks:
+    -   id: flake8
