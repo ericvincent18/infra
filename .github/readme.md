@@ -1,1 +1,1 @@
-Basic README indicating available workflows
+Basic README describing available workflows
