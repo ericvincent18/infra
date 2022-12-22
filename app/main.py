@@ -1,5 +1,3 @@
-from messaging.worker import *
-
 import pika
 import time
 

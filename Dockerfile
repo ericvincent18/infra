@@ -5,6 +5,10 @@ RUN pip install -r requirements.txt
 
 RUN mkdir /app
 WORKDIR /app
+COPY ./app /app
 
-COPY . .
-CMD [“python”, “./app.py”]
+
+
+# COPY . .
+ENTRYPOINT [ "main.py" ]
+CMD [ "python", "main.py" ]
