@@ -17,14 +17,14 @@ def callback(ch, method, properties, body):
     print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
+
 # channel.start_consuming()
-method_frame, header_frame, body = channel.basic_get('task_queue')
+method_frame, header_frame, body = channel.basic_get("task_queue")
 if method_frame:
     print(method_frame, header_frame, body)
     channel.basic_ack(method_frame.delivery_tag)
 else:
-    print('No message returned')
-
+    print("No message returned")
 
 
 channel.basic_qos(prefetch_count=1)
