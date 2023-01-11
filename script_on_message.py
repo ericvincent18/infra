@@ -9,5 +9,3 @@ f = open("/Users/ericvincent/Downloads/winemag-data-130k-v2.json")
 data = json.load(f)
 
 df = pd.DataFrame(data)
-
-a = 1
