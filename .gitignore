@@ -1,2 +1,4 @@
 virtualenv
 .virtualenv
+sql.py
+scrip_on_message.py
