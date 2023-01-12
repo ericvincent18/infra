@@ -1,4 +1,4 @@
+__pycache__/
 virtualenv
 .virtualenv
-.sql.py
-.script_on_message.py
+.vscode

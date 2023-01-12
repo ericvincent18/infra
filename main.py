@@ -2,6 +2,7 @@ import pika
 import time
 import pandas as pd
 import json
+from app.models.reviews import Wine
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host="127.0.0.1"))
 time.sleep(10)
@@ -25,8 +26,15 @@ res_dict = json.loads(body.decode("utf-8"))
 df = pd.DataFrame(res_dict)
 
 a = 1
-# TODO Dataframe function
+# TODO Dataframe function 
 # TODO Logger
 # TODO Save to db -- delete previously submitted rows
 # TODO deployments
 # TODO full update of readme
+# TODO unlimited description limit
+# TODO configs + hide secrets
+# TODO update requirements .txt
+# TODO  handle initial migration with docker / k8s
+
+
+
