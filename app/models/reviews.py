@@ -1,9 +1,12 @@
 from sqlalchemy import Column, Integer, String
-from .base import Base
+import sys
+
+sys.path.insert(1, "/Users/ericvincent/infra/infra/app/models")
+from base import Base
 
 
 class Wine(Base):
-    __tablename__ = "wines"
+    __tablename__ = "wine_reviews"
     points = Column(Integer)
     title = Column(String)
     description = Column(String)
