@@ -2,3 +2,6 @@ __pycache__/
 virtualenv
 .virtualenv
 .vscode
+alembic.ini
+settings.ini
+app/config
