@@ -1,6 +1,6 @@
 ![AppVeyor tests](https://img.shields.io/appveyor/tests/ericvincent18/infra)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ericvincent18/infra/ci.yml)
-
+![Codecov](https://img.shields.io/codecov/c/github/ericvincent18/infra)
 # Basic repo containing useful github actions, CI and rabbitmq message broker
 
 1. Spin up a python venv > 3.8
