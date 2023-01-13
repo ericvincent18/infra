@@ -10,12 +10,14 @@ from reviews import Wine
 sys.path.insert(1, "/Users/ericvincent/infra/infra/app/config")
 from env_config import config
 
+
 class initSession:
     def __init__(self):
 
         self.engine = create_engine(config.db_connection_string)
         self.Session = sessionmaker(bind=self.engine)
         self.session = self.Session()
+
 
 # Connect to the database
 session = initSession()
