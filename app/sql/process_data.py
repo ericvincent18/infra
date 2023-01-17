@@ -14,15 +14,16 @@ from env_config import config
 class initSession:
     def __init__(self):
 
-        self.engine = create_engine(config.db_connection_string,
-    isolation_level="SERIALIZABLE",)
+        self.engine = create_engine(
+            config.db_connection_string, isolation_level="SERIALIZABLE",
+        )
         self.Session = sessionmaker(bind=self.engine)
         self.session = self.Session()
 
 
 # Connect to the database
 session = initSession()
-logging.warning('connected to the db')
+logging.warning("connected to the db")
 
 
 class dataProcessing:

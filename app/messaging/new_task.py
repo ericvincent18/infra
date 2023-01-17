@@ -1,8 +1,8 @@
-import json
 import pika
-import sys
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host="localhost"))
+connection = pika.BlockingConnection(
+    pika.ConnectionParameters(host="localhost", port=15672)
+)
 channel = connection.channel()
 
 channel.queue_declare(queue="task_queue", durable=True)
@@ -16,5 +16,5 @@ channel.basic_publish(
     body=message,
     properties=pika.BasicProperties(delivery_mode=pika.spec.PERSISTENT_DELIVERY_MODE),
 )
-# print(" [x] Sent %r" % message)
+
 connection.close()

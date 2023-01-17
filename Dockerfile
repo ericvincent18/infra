@@ -1,6 +1,11 @@
-FROM python:3.10.9-slim-buster
+FROM python:3.10.9-buster 
+RUN apt-get update && apt-get -y install libpq-dev curl
+RUN apt-get -y install gcc
+
 WORKDIR /app
-COPY requirements.txt requirements.txt
+
+ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY /app /app/
+
 ENTRYPOINT ["python", "main.py" ]
