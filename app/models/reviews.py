@@ -1,8 +1,9 @@
 from sqlalchemy import Column, Integer, String
 import sys
 
-sys.path.insert(1, "/Users/ericvincent/infra/infra/app/models")
-from base import Base
+# uncomment for local development testing
+# sys.path.insert(1, "/Users/ericvincent/infra/infra/app/models")
+from .base import Base
 
 
 class Wine(Base):

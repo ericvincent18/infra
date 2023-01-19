@@ -4,11 +4,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pandas as pd
 
-sys.path.insert(1, "/Users/ericvincent/infra/infra/app/models")
-from reviews import Wine
+# uncomment for local development testing
+# sys.path.insert(1, "/Users/ericvincent/infra/infra/app/models")
+from models.reviews import Wine
 
-sys.path.insert(1, "/Users/ericvincent/infra/infra/app/config")
-from env_config import config
+# uncomment for local development testing
+# sys.path.insert(1, "/Users/ericvincent/infra/infra/app/config")
+from config.env_config import config
 
 
 class initSession:
