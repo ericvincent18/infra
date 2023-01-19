@@ -26,3 +26,10 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+  myapp:
+    build: .
+    depends_on:
+      - postgres
+      - pgadmin
+      - rabbitmq
+  
