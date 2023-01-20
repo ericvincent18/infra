@@ -4,13 +4,14 @@ volumes:
 services:
   postgres:
     image: postgres:latest
+    volumes:
+      - ./pg_scripts:/docker-entrypoint-initdb.d/
+      - data:/var/lib/postgresql
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgrespw
     ports:
-      - 55001:5432
-    volumes:
-      - data:/var/lib/postgresql
+      - 55001:5432      
   pgadmin:
     image: dpage/pgadmin4:latest
     environment:
