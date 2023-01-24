@@ -8,5 +8,7 @@ ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY /app /app/
 ENV PYTHONPATH "${PYTHONPATH}:/Users/ericvincent/infra/infra/app/"
+# RUN sh -c "alembic upgrade head"
+WORKDIR /app
 
-ENTRYPOINT ["python", "main.py" ]
+ENTRYPOINT celery -A app service worker -E --loglevel INFO

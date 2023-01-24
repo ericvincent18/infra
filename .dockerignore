@@ -4,7 +4,6 @@ virtualenv
 .vscode
 alembic.ini
 settings.ini
-app/config
 .env
 env.py
 .coverage
