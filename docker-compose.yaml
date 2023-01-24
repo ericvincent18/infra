@@ -11,7 +11,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgrespw
     ports:
-      - 55001:5432      
+      - 55001:5432
+    restart: "always"
   pgadmin:
     image: dpage/pgadmin4:latest
     environment:
@@ -33,4 +34,4 @@ services:
       - postgres
       - pgadmin
       - rabbitmq
-  
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; alembic upgrade head'
