@@ -24,14 +24,16 @@ PGADMIN_PW=
 PGADMIN_DEFAULT_EMAIL=
 PGADMIN_DEFAULT_PASSWORD=`
 
-4. run `docker compose up` in the root directory.
+4. run `docker compose up` in the root directory. This will create all the necessary containers and inital migration from alembic. 
 5. The PgAdmin server can then be accessed at localhost:5050, using the credentials listed previously in .env
 6. Connect to the Postgres db using the credentials listed in the .env file.
 
 Migrations
-7. Run `alembic upgrade head` to initialize the migrations. 
+7. As previously mentioned, alembic will run the initial migrations. To create additional migrations, we can run `alembic revision --autogenerate -m "Added table-name"`. Then, run `alembic upgrade head` to run the migrations. 
 
 Main
 Messages can be sent using `python new_task.py` 
-Messages can be received and saved to the db running `python main.py`. The messages will be saved to the db using the psycopg2 and sqlalchemy clients.
+Messages will be received and saved to the once the service is running on container my-app. The messages will be saved to the db using the psycopg2 and sqlalchemy clients.
+
+Kubernetes / Kind set up
 
