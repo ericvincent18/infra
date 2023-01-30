@@ -33,7 +33,7 @@ Migrations
 
 Main
 Messages can be sent using `python new_task.py` 
-Messages will be received and saved to the once the service is running on container my-app. The messages will be saved to the db using the psycopg2 and sqlalchemy clients.
+Messages will be received and saved to the once the service is running on container my-app. The messages will be saved to the db using the psycopg2 and sqlalchemy clients. The database can be accessed using the Pgadmin client using the host `host.docker.internal`
 
 Kubernetes / Kind set up
 
