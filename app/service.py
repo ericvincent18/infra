@@ -4,6 +4,7 @@ import json
 from sql.process_data import dataProcessing
 import logging
 from celery import bootsteps
+
 # from config.env_config import config
 from kombu import Queue, Exchange, Consumer
 
@@ -15,9 +16,7 @@ review_queue = Queue(
 
 connection = pika.BlockingConnection(
     pika.ConnectionParameters(
-        host="rabbitmq",
-        port=5672,
-        credentials=pika.PlainCredentials("user", "pass"),
+        host="rabbitmq", port=5672, credentials=pika.PlainCredentials("user", "pass"),
     )
 )
 logging.info("we are connected")
